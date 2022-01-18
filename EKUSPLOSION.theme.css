@@ -73,6 +73,19 @@ body {
 	--var-search-gradient-a: -webkit-gradient(linear,left top,right top,from(rgba(54,57,63,0)),color-stop(80%,#36393f));
 	--var-search-gradient-b: linear-gradient(90deg,rgba(54,57,63,0),var(--background-modifier-accent) 80%);
 	--var-video-avatar-background: rgba(95, 44, 44, 0.5);
+
+	--var-voice-call-icon-background: rgba(95, 44, 44, 0.5);
+	--var-voice-call-icon-color: #fff;
+	--var-voice-call-icon-hovered-background: rgba(95, 44, 44, 1);
+	--var-voice-call-icon-hovered-color: #fff;
+	--var-voice-call-icon-active-background: rgba(95, 44, 44, 0.5);
+	--var-voice-call-icon-active-color: #fff;
+	--var-voice-call-icon-active-hovered-background: rgba(95, 44, 44, 1);
+	--var-voice-call-icon-active-hovered-color: #fff;
+	--var-voice-call-disconnect-icon-background: #fff;
+	--var-voice-call-disconnect-icon-color: #000;
+	--var-voice-call-disconnect-icon-hovered-background: #ED4245;
+	--var-voice-call-disconnect-icon-hovered-color: #000;
 }
 
 #app-mount {
@@ -361,3 +374,79 @@ body {
 .tile-2TcwiO {
     background: var(--var-video-avatar-background);
 }
+
+
+
+/*
+
+    Voice Chat Icon Colors
+
+*/
+
+
+/*
+    Icon Background Color
+*/
+
+.colorable-3rVGna.primaryDark-2UJt1G {
+	background: var(--var-voice-call-icon-background);
+}
+
+.colorable-3rVGna.primaryDark-2UJt1G.active-3D765s, .colorable-3rVGna.primaryDark-2UJt1G:hover {
+	background: var(--var-voice-call-icon-hovered-background);
+}
+
+
+/*
+    Icon Color
+*/
+
+.colorable-3rVGna.primaryDark-2UJt1G, .colorable-3rVGna.primaryDark-2UJt1G .centerIcon-JYpTUi {
+	color: var(--var-voice-call-icon-color);
+}
+
+/*
+   Active icon background color
+*/
+
+.colorable-3rVGna.white-11auuQ {
+	background: var(--var-voice-call-icon-active-background);
+}
+
+.colorable-3rVGna.white-11auuQ.active-3D765s, .colorable-3rVGna.white-11auuQ:hover {
+	background: var(--var-voice-call-icon-active-hovered-background:);
+}
+
+/*
+    Active icon color
+*/
+
+.colorable-3rVGna.white-11auuQ, .colorable-3rVGna.white-11auuQ .centerIcon-JYpTUi {
+	color: var(--var-voice-call-icon-active-color);
+}
+
+
+/*
+    Disconnect button background color
+*/
+
+.colorable-3rVGna.red-3T8maV {
+	background: var(--var-voice-call-disconnect-icon-background);
+}
+
+.colorable-3rVGna.red-3T8maV:hover {
+	background: var(--var-voice-call-disconnect-icon-hovered-background);
+}
+
+/*
+    Disconnect button color
+*/
+
+.colorable-3rVGna.red-3T8maV, .colorable-3rVGna.red-3T8maV .centerIcon-JYpTUi {
+    color: var(--var-voice-call-disconnect-icon-color);
+}
+
+.colorable-3rVGna.red-3T8maV:hover, .colorable-3rVGna.red-3T8maV:hover .centerIcon-JYpTUi {
+    color: var(--var-voice-call-disconnect-icon-hovered-color);
+}
+
