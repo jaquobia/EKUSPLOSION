@@ -1,0 +1,363 @@
+//META{"name":"Megumin","description":"","author":"SnO3","version":"0"}*//
+
+#app-mount .container-1D34oG,
+.app-2rEoOp,
+.bg-h5JY_x,
+.chat-3bRxxu,
+.content-1o0f9g,
+.contentRegionScroller-26nc1e,
+.layer-3QrUeG,
+.members-1998pB > div,
+.scroller-1JbKMe,
+.applicationStore-1pNvnv,
+.scroller-305q3I,
+.sidebar-2K8pFh,
+.standardSidebarView-3F1I7i,
+.wrapper-1F5TKx,
+.wrapper-3NnKdC,
+.wrapper-3vR61M,
+body {
+  background: 0 0;
+}
+
+/*
+	Discover the class for the search menu
+	- has issues as a popup, can't search deeper
+		than the 
+*/
+:root {
+	--o-bg: url('https://i.imgur.com/2ItyWch.jpeg');
+	--channels-default: rgba(122, 129, 129, 0.9);
+	--channeltextarea-background: #ad4343;
+	--background-primary: #a7494900;
+	--background-secondary: #a7494954;
+	--background-secondary-alt: #a8444454;
+	--background-modifier-accent: #c8585854;
+	--background-modifier-hover: #ad4343;
+	--background-tertiary: #801e1e01;
+	--background-floating: rgba(95, 44, 44, 0.99);
+	--text-muted: rgba(255, 255, 255, 0.8);
+	--text-normal: white;
+	--interactive-normal: white;
+	--interactive-muted: rgba(255, 255, 255, 0.4);
+	--background-modifier-accent: rgba(255, 255, 255, 0.185);
+	--brand-experiment: #bb2a2a;
+	--scrollbar-thin-thumb: #e46464;
+	--scrollbar-thin-track: transparent;
+	--scrollbar-auto-thumb: #e46464;
+	--scrollbar-auto-track: #00000049;
+	--header-secondary: rgb(211, 211, 211);
+
+	/*	
+		Used to change content in the primary pane
+		without changing the direct background color-transparency
+	*/
+	--background-primary2: #a7494954;
+	--background-primary3: #a7494985;
+	--background-primary4: #835252;
+
+	--background-server-list: var(--background-tertiary);
+
+	/* 
+		Not sure what this is actually used for
+		Added it here just incase anything else uses it
+		besides the store
+	*/
+	--deprecated-store-bg: var(--background-primary2);
+
+
+	/*
+		Direct variable control
+	*/
+	--var-settings-text-ESC: var(--text-normal);
+	--var-search-gradient-a: -webkit-gradient(linear,left top,right top,from(rgba(54,57,63,0)),color-stop(80%,#36393f));
+	--var-search-gradient-b: linear-gradient(90deg,rgba(54,57,63,0),var(--background-modifier-accent) 80%);
+	--var-video-avatar-background: rgba(95, 44, 44, 0.5);
+}
+
+#app-mount {
+	background-image: var(--o-bg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.app-1q1i1E {
+	background-color: #aa3a3a9b;
+}
+
+.peopleListItem-2nzedh {
+	border-radius: 2px;
+}
+
+/* Online Friends */
+.peopleList-3c4jOR > div {
+	background-color: #c8585854;
+	padding-top: 0.2rem;
+	padding-bottom: 0.2rem;
+	border-radius: 3px;
+	width: 99%;
+	margin:auto;
+	border: solid rgba(255, 255, 255, 0.233) 1px;
+}
+
+.peopleList-3c4jOR > div:nth-child(2) {
+	display: none;
+}
+
+.nowPlayingColumn-2sl4cE {
+	background: transparent;
+}
+
+.container-lRFx4q {
+	background: transparent;
+}
+
+.typeWindows-1za-n7 {
+	background-color: #dd1b1bb6;
+	margin-top: 0;
+	padding-top: 0.3rem;
+}
+
+.container-1r6BKw.themed-ANHk51 {
+	background-color: #c85858d5;
+}
+
+.icon-22AiRD {
+	color: white;
+}
+
+.actionButton-uPB8Fs {
+	background-color: #d67676d5;
+}
+
+.icon-35-fSh {
+	color: white;
+}
+
+.children-19S4PO:after {
+	display: none;
+}
+
+.itemCard-v9viV7 {
+	background-color: #c85858d5;
+}
+
+.theme-dark .inset-3sAvek {
+	background-color: #b35252d5;
+}
+
+
+.outer-1AjyKL.active-1xchHY,
+.outer-1AjyKL.interactive-3B9GmY:hover {
+	background-color: #b35252d5 !important;
+}
+
+.sidebar-2K8pFh {
+	border-top-left-radius: 0 !important;
+}
+
+.theme-dark .root-1gCeng {
+	background-color: var(--background-floating);
+	border: solid rgba(255, 255, 255, 0.342) 1px;
+}
+
+.offline-3nJYBR {
+	opacity: 0.5;
+}
+
+.membersGroup-v9BXpm {
+	text-align: center;
+	padding-bottom: 21px;
+}
+
+.membersGroup-v9BXpm > span {
+	padding: 0.13rem 1rem;
+	background-color: #851f1f38;
+	border-bottom: solid #d36a6ad5 2px;
+	border-radius: 3px;
+}
+
+.container-enaOkj,
+.messagesPopoutWrap-1MQ1bW {
+	background-color: #b64e4e;
+}
+
+/* 
+	===== HERE STARTS EDITS BY JAQUOBIA =====
+*/
+
+/*
+	Override the background pane coloration
+	for the server selector
+*/
+.wrapper-1_HaEi {
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 72px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    position: relative;
+    background-color: var(--background-server-list);
+}
+
+/*
+	The Friends/Library/Nitro header style
+*/
+.container-ZMc96U.themed-Hp1KC_ {
+    background-color: var(--background-primary4);
+}
+
+/*
+	The Friends/Library/Nitro list background style
+*/
+.theme-dark .container-2cd8Mz {
+    background-color: var(--background-primary2);
+}
+/*
+	The 'Active Now' style for the
+	active voicechat groups
+*/
+.section-3G9aLW {
+	position: relative;
+    padding: 12px;
+    background-color: var(--background-primary3);
+}
+
+/*
+	The 'Active Now' style for the
+	active voicechat groups during hover
+*/
+.theme-dark .outer-2JOHae.active-1W_Gl9, .theme-dark .outer-2JOHae.interactive-2zD88a:hover {
+    background-color: var(--background-primary3);
+}
+/*
+	The 'Nitro' syle for background
+*/
+.applicationStore-2nk7Lo {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-overflow-scrolling: touch;
+    background-color: var(--deprecated-store-bg);
+}
+
+/*
+	The 'Library' game Install button style
+*/
+.theme-dark .lookFilled-yCfaCM.colorPrimary-2AuQVo {
+    color: var(--text-normal);
+    background-color: var(--background-primary4);
+}
+
+/*
+	Add Friends to DM background color
+*/
+.theme-dark .root-g14mjS {
+    background-color: var(--background-primary3);
+    -webkit-box-shadow: 0 0 0 1px rgba(32,34,37,.6),0 2px 10px 0 rgba(0,0,0,.2);
+    box-shadow: 0 0 0 1px rgba(32,34,37,.6),0 2px 10px 0 rgba(0,0,0,.2);
+}
+
+/*
+	Changes the gradient background of group chat
+*/
+.gradientBottom-uB_-4E, .gradientTop-1UBZHm {
+    opacity:  0;
+}
+
+/*
+	Changes the background color to the 
+	Camera/ShareScreens/Mute buttons on
+	the group calls
+*/
+.colorable-3rVGna.primaryDark-2UJt1G {
+	background-color: var(--background-modifier-accent);
+}
+
+/*
+	!!Untested!!
+	Changnes the group chat background color
+*/
+.callContainer-HtHELf {
+	background-color: var(--background-tertiary);
+}
+
+/*
+	The footer of the settings menus
+*/
+.theme-dark .footer-31IekZ {
+    background-color: var(--background-secondary);
+    -webkit-box-shadow: inset 0 1px 0 rgba(47,49,54,.6);
+    box-shadow: inset 0 1px 0 rgba(47,49,54,.6);
+}
+
+/*
+	The circular Close button color
+	in settings menus
+*/
+.theme-dark .closeButton-PCZcma {
+    border-color: var(--background-primary3);
+}
+
+/*
+	The ESC text under the circular
+	close buttons
+*/
+.theme-dark .keybind-13vtq8 {
+    color: var(--var-settings-text-ESC);
+}
+
+/*
+	Search bar dropdown background color
+*/
+.theme-dark .container-2McqkF {
+    background-color: var(--background-primary2);
+}
+/*
+	The werid gradient beside the options
+	in the search dropdown
+*/
+.theme-dark .option-2KkUJO:after {
+    background: var(--var-search-gradient-a);
+    background: var(--var-search-gradient-b);
+}
+
+/*
+    Shrink avatars in video calls
+*/
+.content-3u3YYB {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+} .video-35SHWt {
+    width: 100%;
+    height: 100%;
+    border-radius: 0%;
+}
+
+/*
+    The background color behind avatars in video calls
+*/
+.tile-2TcwiO {
+    background: var(--var-video-avatar-background);
+}
