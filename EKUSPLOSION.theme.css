@@ -1,77 +1,71 @@
-//META{"name":"EKUSPLOSION","description":"","author":"(SnO3 for original theme) Jaquobia, JJ","version":"0"}*//
-
-#app-mount .container-1D34oG,
-.app-2rEoOp,
-.bg-h5JY_x,
-.chat-3bRxxu,
-.content-1o0f9g,
-.contentRegionScroller-26nc1e,
-.layer-3QrUeG,
-.members-1998pB > div,
-.scroller-1JbKMe,
-.applicationStore-1pNvnv,
-.scroller-305q3I,
-.sidebar-2K8pFh,
-.standardSidebarView-3F1I7i,
-.wrapper-1F5TKx,
-.wrapper-3NnKdC,
-.wrapper-3vR61M,
-body {
-  background: 0 0;
-}
+/**
+ * @name EKUSPLOSION
+ * @version 0.2.0
+ * @description Just a theme backend
+ */
 
 /*
-	Discover the class for the search menu
-	- has issues as a popup, can't search deeper
-		than the 
+    Root Variables
 */
 :root {
-	--o-bg: url('https://i.imgur.com/2ItyWch.jpeg');
+  /*
+      This generator's wrapper variables for discord's variables
+  */
+	--var-background-image: url('https://i.imgur.com/2ItyWch.jpeg');
+  	--var-bg-1: #a7494900;
+	--var-bg-2: #a7494954;
+	--var-bg-3: #a7494996;
+	--var-bg-header: #835252;
+  	--var-icon-color: #da2020c5;
+	--var-textbox-color: #da202063;
+  	--var-scrollbar-base: #e46464;
+  	--var-scrollbar-track: #00000049;
+
+  /*
+      Discord's Variables
+  */
+
 	--channels-default: rgba(122, 129, 129, 0.9);
-	--channeltextarea-background: #ad4343;
-	--background-primary: #a7494900;
-	--background-secondary: #a7494954;
-	--background-secondary-alt: #a8444454;
-	--background-modifier-accent: #c8585854;
-	--background-modifier-hover: #ad4343;
+	--channeltextarea-background: var(--var-textbox-color);
+  	--background-primary: var(--var-bg-1);
+	--background-secondary: var(--var-bg-2);
+	--background-secondary-alt: var(--var-bg-2);
+	--background-modifier-accent: var(--var-iconic-color);
+	--background-modifier-hover: var(--var-bg-3);
 	--background-tertiary: #801e1e01;
-	--background-floating: rgba(95, 44, 44, 0.99);
+	--background-floating: var(--var-bg-3);
 	--text-muted: rgba(255, 255, 255, 0.8);
 	--text-normal: white;
 	--interactive-normal: white;
 	--interactive-muted: rgba(255, 255, 255, 0.4);
 	--background-modifier-accent: rgba(255, 255, 255, 0.185);
-	--brand-experiment: #bb2a2a;
-	--scrollbar-thin-thumb: #e46464;
+	--brand-experiment: var(--var-iconic-color);
+	--scrollbar-thin-thumb: var(--var-scrollbar-base);
 	--scrollbar-thin-track: transparent;
-	--scrollbar-auto-thumb: #e46464;
-	--scrollbar-auto-track: #00000049;
+	--scrollbar-auto-thumb: var(--var-scrollbar-base);
+	--scrollbar-auto-track: var(--var-scrollbar-track);
 	--header-secondary: rgb(211, 211, 211);
-
-	/*	
-		Used to change content in the primary pane
-		without changing the direct background color-transparency
-	*/
-	--background-primary2: #a7494954;
-	--background-primary3: #a7494985;
-	--background-primary4: #835252;
-
-	--background-server-list: var(--background-tertiary);
-
-	/* 
-		Not sure what this is actually used for
-		Added it here just incase anything else uses it
-		besides the store
-	*/
-	--deprecated-store-bg: var(--background-primary2);
-
 
 	/*
 		Direct variable control
 	*/
+  	--var-main-header: var(--var-bg-header);
+  	--var-main-content: var(--var-bg-1);
+
+  	--var-friends_library_nitro: var(---var-main-content);
+
+	--var-bg-server-list: var(--var-bg-3);
+
+  	--var-active-now-background: var(--var-bg-2);
+  	--var-active-now-running-app: var(--var-bg-3);
+  	--var-active-now-hover: var(--var-bg-header);
+
 	--var-settings-text-ESC: var(--text-normal);
+
 	--var-search-gradient-a: -webkit-gradient(linear,left top,right top,from(rgba(54,57,63,0)),color-stop(80%,#36393f));
 	--var-search-gradient-b: linear-gradient(90deg,rgba(54,57,63,0),var(--background-modifier-accent) 80%);
+  	--var-search-background: var(--var-bg-2);
+
 	--var-video-avatar-background: rgba(95, 44, 44, 0.5);
 
 	--var-voice-call-icon-background: rgba(95, 44, 44, 0.5);
@@ -89,10 +83,10 @@ body {
 }
 
 #app-mount {
-	background-image: var(--o-bg);
+	background-image: var(--var-background-image);
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: 100vw 100vh;
 }
 
 /*
@@ -100,86 +94,96 @@ body {
 	for the server selector
 */
 .wrapper-1_HaEi {
-    overflow: hidden;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     width: 72px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-negative: 0;
-    flex-shrink: 0;
     position: relative;
-    background-color: var(--background-server-list);
+    background-color: var(--var-bg-server-list);
 }
 
 /*
-	The Friends/Library/Nitro header style
+    The titlebar of floating windows...
+    mostly used for the bd css editors
+*/
+.floating-window-titlebar {
+    height: 28px;
+    align-items: center;
+    color: #fff;
+    background: var(--var-bg-header);
+}
+
+/*
+	The Friends/Library/Nitro/Main header style
 */
 .container-ZMc96U.themed-Hp1KC_ {
-    background-color: var(--background-primary4);
+    background-color: var(--var-main-header);
+}
+
+.tabBody-2dgbAs {
+  background-color: var(--var-bg-1);
 }
 
 /*
 	The Friends/Library/Nitro list background style
 */
 .theme-dark .container-2cd8Mz {
-    background-color: var(--background-primary2);
+    background-color: var(--var-friends_library_nitro);
+}
+
+/*
+  The 'Active Now' background style for the
+	active voicechat groups (found in Friends)
+*/
+.wrapper-2RrXDg {
+    background-color: var(--var-active-now-background);
+    border: 1px solid var(--background-modifier-accent);
 }
 /*
-	The 'Active Now' style for the
-	active voicechat groups
+	The 'Active Now' running app style for the
+	active voicechat groups (found in Friends)
 */
 .section-3G9aLW {
 	position: relative;
     padding: 12px;
-    background-color: var(--background-primary3);
+    background-color: var(--var-active-now-running-app);
 }
 
 /*
-	The 'Active Now' style for the
-	active voicechat groups during hover
+	The 'Active Now' hover style for the
+	active voicechat groups (found in Friends)
 */
 .theme-dark .outer-2JOHae.active-1W_Gl9, .theme-dark .outer-2JOHae.interactive-2zD88a:hover {
-    background-color: var(--background-primary3);
+    background-color: var(--var-active-now-hover);
 }
 /*
 	The 'Nitro' syle for background
 */
 .applicationStore-2nk7Lo {
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-box-flex: 1;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-overflow-scrolling: touch;
-    background-color: var(--deprecated-store-bg);
+    background-color: var(--var-friends_library_nitro);
 }
 
 /*
 	The 'Library' game Install button style
 */
 .theme-dark .lookFilled-yCfaCM.colorPrimary-2AuQVo {
-    color: var(--text-normal);
-    background-color: var(--background-primary4);
+    color: var(--var-bg-header);
+    background-color: var(--var-bg-header);
 }
 
 /*
 	Add Friends to DM background color
 */
 .theme-dark .root-g14mjS {
-    background-color: var(--background-primary3);
+    background-color: var(--var-bg-3);
     -webkit-box-shadow: 0 0 0 1px rgba(32,34,37,.6),0 2px 10px 0 rgba(0,0,0,.2);
     box-shadow: 0 0 0 1px rgba(32,34,37,.6),0 2px 10px 0 rgba(0,0,0,.2);
+}
+
+/*
+    The color of disabled buttons
+*/
+.disabledButtonColor-1MaGz- {
+    background-color: rgba(24,25,28,.5);
+    color: var(--header-primary);
+    opacity: 1;
 }
 
 /*
@@ -220,7 +224,7 @@ body {
 	in settings menus
 */
 .theme-dark .closeButton-PCZcma {
-    border-color: var(--background-primary3);
+    border-color: var(--var-bg-3);
 }
 
 /*
@@ -235,7 +239,7 @@ body {
 	Search bar dropdown background color
 */
 .theme-dark .container-2McqkF {
-    background-color: var(--background-primary2);
+    background-color: var(--var-search-background);
 }
 /*
 	The werid gradient beside the options
@@ -273,9 +277,7 @@ body {
 
 
 /*
-
     Voice Chat Icon Colors
-
 */
 
 
@@ -309,7 +311,7 @@ body {
 }
 
 .colorable-3rVGna.white-11auuQ.active-3D765s, .colorable-3rVGna.white-11auuQ:hover {
-	background: var(--var-voice-call-icon-active-hovered-background:);
+	background: var(--var-voice-call-icon-active-hovered-background);
 }
 
 /*
@@ -344,5 +346,3 @@ body {
 .colorable-3rVGna.red-3T8maV:hover, .colorable-3rVGna.red-3T8maV:hover .centerIcon-JYpTUi {
     color: var(--var-voice-call-disconnect-icon-hovered-color);
 }
-
-
